@@ -1,3 +1,165 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background;
+  }
+
+  h1 {
+    @apply text-2xl font-extrabold text-gray-800;
+  }
+
+  h2 {
+    @apply text-xl font-bold text-gray-800;
+  }
+
+  h3 {
+    @apply text-lg font-semibold text-gray-800;
+  }
+
+  p {
+    @apply text-base font-normal;
+  }
+
+  /* table */
+  table {
+    @apply w-full;
+  }
+
+  thead {
+    @apply bg-gray-100;
+  }
+
+  tr {
+    @apply my-5 border-b last:border-b-0;
+  }
+
+  th {
+    @apply text-left px-8 py-4;
+  }
+
+  td {
+    @apply px-8 py-2;
+  }
+}
+
+@layer components {
+  /* global */
+  .card {
+  }
+
+  .img--container {
+    @apply w-1/2;
+  }
+
+  .card--img {
+    @apply w-full h-full object-cover;
+  }
+
+  .carousel {
+    @apply w-full h-64 flex flex-nowrap relative gap-5
+    border rounded-sm;
+  }
+
+  .carousel--btn {
+    @apply absolute top-1/2;
+  }
+
+  .carousel--item {
+    @apply w-full h-full bg-red-200;
+  }
+
+  .carousel--item-img {
+    @apply w-full h-full object-contain;
+  }
+
+  .container-flex {
+    @apply w-full flex items-start justify-between gap-5 px-20 my-5 rounded-sm;
+  }
+
+  .td--flex {
+    @apply flex items-center gap-5;
+  }
+
+  .table {
+    @apply w-full border-collapse;
+  }
+
+  /* modules */
+  .header {
+    @apply w-full h-20 flex items-center gap-5
+    px-[calc(5rem+1.25rem)] 
+    bg-white border-b;
+  }
+
+  .main {
+    @apply min-h-[calc(100vh-5rem)] relative
+    p-5 bg-surface
+    transition-all duration-75;
+  }
+
+  .section {
+    @apply w-full mb-5 pb-5 border-b last:mb-0;
+  }
+
+  .section--title {
+    @apply mb-5;
+  }
+
+  .aside-player {
+    @apply h-[calc(100vh-5rem)] flex flex-col items-center 
+   bg-surface shadow 
+   transition-all duration-75;
+  }
+
+  .aside--header {
+    @apply w-full p-5 mb-5 border-b text-center relative;
+  }
+
+  .aside--header-btn {
+    @apply absolute top-5 right-5;
+  }
+
+  .aside--body {
+  }
+
+  .aside--body-img-container {
+    @apply p-5 rounded-sm;
+  }
+
+  .aside--body-img {
+    @apply rounded-sm;
+  }
+
+  .aside--footer {
+    @apply flex items-center gap-5 justify-center;
+  }
+
+  .bottom-player {
+    @apply w-full h-20 fixed left-0 flex items-center justify-between
+    px-[calc(5rem+1.25rem)] bg-surface border-t
+    transition-all duration-75;
+  }
+
+  .bottom-player-info {
+    @apply w-[calc(50%+5rem)] flex items-center justify-between;
+  }
+
+  .bottom-player-artist {
+    @apply flex items-center gap-5;
+  }
+
+  .thumb {
+    @apply w-14 h-14 object-cover rounded-sm;
+  }
+
+  .player-control--container {
+    @apply flex items-center gap-2;
+  }
+
+  .footer {
+    @apply w-full h-20 flex items-center justify-center bg-gray-900 text-white font-thin;
+  }
+}
