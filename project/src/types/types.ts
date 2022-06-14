@@ -11,3 +11,13 @@ export type DataType = {
     duration: number;
   };
 };
+
+export type FormatedDataType = {
+  id: string;
+  title: string;
+  description: string;
+  members: string;
+  thumbnail: string;
+  publishedAt: string;
+  duration: string;
+};
