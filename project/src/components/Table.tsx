@@ -5,6 +5,10 @@ import { Button } from "./Button";
 // types
 import { DataType } from "../types/types";
 
+// helpers
+import { formatDate } from "../helpers/formatDate";
+import { convertTime } from "../helpers/convertTime";
+
 interface Props {
   data: DataType[];
 }
@@ -26,13 +30,18 @@ export const Table = ({ data }: Props) => {
         {data.map(({ thumbnail, title, members, published_at, file }) => (
           <tr>
             <td className="td--flex">
-              <img className="thumb" src={thumbnail} alt={title} />
+              <img
+                className="thumb"
+                src={thumbnail}
+                alt={title}
+                title={title}
+              />
               <span>|</span>
-              {title}
+              {title.slice(13)}
             </td>
             <td>{members}</td>
-            <td>{published_at}</td>
-            <td>{file.duration}</td>
+            <td>{formatDate(published_at)}</td>
+            <td>{convertTime(file.duration)}</td>
             <td>
               <Button
                 type="button"
