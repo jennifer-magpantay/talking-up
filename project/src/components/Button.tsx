@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ForwardedRef, forwardRef } from "react";
 
-interface Props {
+interface ButtonProps {
   style?: string;
   type: "button" | "submit" | "reset";
   title?: string;
@@ -8,10 +8,10 @@ interface Props {
   onClick: () => void;
 }
 
-export const Button = ({ style, type, title, icon, onClick }: Props) => {
+export const Button = ({ style, type, title, icon, onClick }: ButtonProps) => {
   return (
     <button className={style} type={type} onClick={onClick}>
-      <span>{icon}</span>
+      <span aria-label={title}>{icon}</span>
       {title}
     </button>
   );

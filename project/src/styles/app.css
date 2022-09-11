@@ -23,6 +23,10 @@
     @apply text-base font-normal;
   }
 
+  .vertical-bar {
+    @apply text-base font-thin text-gray-300;
+  }
+
   /* table */
   table {
     @apply w-full table-auto;
@@ -47,6 +51,10 @@
 
 @layer components {
   /* global */
+  .greeting {
+    @apply mb-4;
+  }
+
   .card {
   }
 
@@ -58,13 +66,17 @@
     @apply w-full h-full object-cover;
   }
 
+  .swiper-button-prev {
+    @apply text-gray-700;
+  }
+
   .carousel {
     @apply w-full h-64 flex flex-nowrap relative gap-5
     border rounded-sm;
   }
 
   .carousel--btn {
-    @apply absolute top-1/2;
+    @apply absolute top-1/2 -translate-y-1/2;
   }
 
   .carousel--item {
@@ -83,7 +95,11 @@
     @apply flex items-center gap-5;
   }
 
-   /* modules */
+  .player--link {
+    @apply flex items-center gap-4;
+  }
+
+  /* modules */
   .header {
     @apply w-full h-20 flex items-center gap-5
     px-[calc(5rem+1.25rem)] 
@@ -134,8 +150,8 @@
   }
 
   .bottom-player {
-    @apply w-full h-20 fixed left-0 flex items-center justify-between
-    px-[calc(5rem+1.25rem)] bg-surface border-t
+    @apply w-full h-28 fixed left-0 flex items-center justify-between
+    px-[calc(5rem+1.25rem)] bg-surface border-t-2
     transition-all duration-75;
   }
 
@@ -152,7 +168,7 @@
   }
 
   .player-control--container {
-    @apply flex items-center gap-2;
+    @apply flex items-center gap-2 mx-5;
   }
 
   .footer {

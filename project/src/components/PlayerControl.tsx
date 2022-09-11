@@ -24,19 +24,25 @@ export const PlayerControl = ({
     <div className="player-control--container">
       <Button
         type="button"
-        icon={<SkipBackCircle size={40} />}
+        icon={<SkipBackCircle size={40} weight="thin" />}
         onClick={onClickPreviousBtn}
       />
 
       <Button
         type="button"
-        icon={isPlaying ? <PlayCircle size={48} /> : <PauseCircle size={48} />}
+        icon={
+          isPlaying ? (
+            <PlayCircle size={48} weight="thin" />
+          ) : (
+            <PauseCircle size={48} weight="thin" />
+          )
+        }
         onClick={onClickPlayBtn}
       />
 
       <Button
         type="button"
-        icon={<SkipForwardCircle size={40} />}
+        icon={<SkipForwardCircle size={40} weight="thin" />}
         onClick={onClickNextBtn}
       />
     </div>

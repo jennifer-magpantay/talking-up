@@ -3,11 +3,19 @@ import { Button } from "./Button";
 
 interface Props {
   width: string;
+  title: string;
+  members: string;
   children: React.ReactNode;
   onClickCloseBtn: () => void;
 }
 
-export const AsidePlayer = ({ width, children, onClickCloseBtn }: Props) => {
+export const AsidePlayer = ({
+  width,
+  title,
+  members,
+  children,
+  onClickCloseBtn,
+}: Props) => {
   return (
     <aside className={`aside-player ${width}`}>
       <div className="aside--header">
@@ -15,7 +23,7 @@ export const AsidePlayer = ({ width, children, onClickCloseBtn }: Props) => {
         <Button
           style="aside--header-btn"
           type="button"
-          icon={<XCircle size={32} alt="Closing button" />}
+          icon={<XCircle size={32} weight="thin" alt="Closing button" />}
           onClick={onClickCloseBtn}
         />
       </div>
@@ -28,7 +36,11 @@ export const AsidePlayer = ({ width, children, onClickCloseBtn }: Props) => {
             alt="Artist Album"
             loading="lazy"
           />
-          <figcaption>Album's name | Artist's name</figcaption>
+          <figcaption>
+            {title}
+            <span className="vertical-bar">|</span>
+            {members}
+          </figcaption>
         </figure>
       </div>
       {children}
