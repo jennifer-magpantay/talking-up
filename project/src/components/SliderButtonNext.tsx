@@ -9,7 +9,7 @@ export const SliderButtonNext = () => {
 
   return (
     <Button
-      style="carousel--btn right-4"
+      style="carousel--btn right-0"
       type="button"
       icon={<CaretRight size={32} weight="light" />}
       onClick={() => swiper.slideNext()}

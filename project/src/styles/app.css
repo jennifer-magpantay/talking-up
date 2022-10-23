@@ -56,14 +56,40 @@
   }
 
   .card {
+    @apply w-full relative p-4 bg-white border-solid border-2 border-gray-100 rounded-md;
   }
 
-  .img--container {
-    @apply w-1/2;
+  .card--header {
+    @apply w-full bg-black;
   }
 
-  .card--img {
-    @apply w-full h-full object-cover;
+  .card--header-link {
+    @apply w-full block relative;
+  }
+
+  .card--header-link span {
+    @apply absolute top-1/2 left-1/2 
+    px-6 py-2 text-lg text-white
+    border-solid border-4 border-white opacity-0
+    -translate-x-1/2 -translate-y-1/2 z-10
+    group-hover:opacity-100 group-hover:cursor-pointer
+    group-focus:opacity-100 group-focus:cursor-pointer  ease-linear;
+  }
+
+  .card--header-img {
+    @apply w-full h-full group-hover:opacity-40 group-focus:opacity-40 ease-linear;
+  }
+
+  .card--body {
+    @apply text-gray-500;
+  }
+
+  .card--footer {
+    @apply w-full flex items-center gap-2;
+  }
+
+  .card--player {
+    @apply absolute right-4 bottom-4;
   }
 
   .swiper-button-prev {
@@ -76,7 +102,7 @@
   }
 
   .carousel--btn {
-    @apply absolute top-1/2 -translate-y-1/2;
+    @apply absolute top-1/2 -translate-y-1/2 z-10;
   }
 
   .carousel--item {
@@ -118,6 +144,10 @@
 
   .section--title {
     @apply mb-5;
+  }
+
+  .section .swiper {
+    @apply px-16;
   }
 
   .aside-player {

@@ -11,7 +11,7 @@ export const SliderButtonPrev = () => {
 
   return (
     <Button
-      style="carousel--btn left-4"
+      style="carousel--btn left-0"
       type="button"
       icon={<CaretLeft size={32} weight="light" />}
       onClick={() => swiper.slideNext()}

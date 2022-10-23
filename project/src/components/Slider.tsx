@@ -4,6 +4,7 @@ import "swiper/css";
 import { SliderButtonPrev } from "./SliderButtonPrev";
 import { SliderButtonNext } from "./SliderButtonNext";
 import { FormatedDataType } from "../types/types";
+import { Card } from "./Card";
 
 interface SliderProps {
   length?: number;
@@ -15,7 +16,7 @@ export const Slider = ({ lenght, data }: SliderProps) => {
     <Swiper
       tag="ul"
       wrapperTag="li"
-      spaceBetween={50}
+      spaceBetween={65}
       slidesPerView={2}
       navigation={{
         nextEl: ".carousel--btn left-4",
@@ -29,8 +30,16 @@ export const Slider = ({ lenght, data }: SliderProps) => {
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      {data.map(({ id, title }) => (
-        <SwiperSlide key={id}>{title}</SwiperSlide>
+      {data.map(({ id, title, thumbnail, members, publishedAt, duration }) => (
+        <SwiperSlide key={id}>
+          <Card
+            thumbnail={thumbnail}
+            title={title}
+            members={members}
+            published_at={publishedAt}
+            duration={String(duration)}
+          />
+        </SwiperSlide>
       ))}
 
       {/* custom buttons for navigation */}
